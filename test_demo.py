@@ -17,7 +17,7 @@ class TestDemo1:
     def teardown(self):
         self.driver.quit()
 
-    def get_cookies(self):
+    def get_own_cookies(self):
         self._username = "XXX"
         self._password = "XXX"
 
@@ -36,7 +36,7 @@ class TestDemo1:
         return cookies
 
     def handle_cookies(self):
-        cookies_test = self.get_cookies()
+        cookies_test = self.get_own_cookies()
         print(cookies_test)
         db = shelve.open("cookies")
         db["cookie"] = cookies_test
