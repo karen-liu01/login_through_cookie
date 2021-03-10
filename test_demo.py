@@ -62,11 +62,11 @@ class TestDemo1:
         key = "到课率查询贴"
         if key in title:
             print("cookies有效，登录成功")
-            assert "到课率查询贴" in title
+            assert key in title
         else:
             print("cookies无效，需要重新获取并存储")
             cookies = self.handle_cookies()
             self.driver.get("https://ceshiren.com/t/topic/6223/21")
             sleep(3)
             title = self.driver.title
-            assert "到课率查询贴" in title
+            assert key in title
